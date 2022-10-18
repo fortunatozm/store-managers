@@ -5,12 +5,12 @@ const getAllProducts = async () => {
   return products;
 };
 
-const insertProducts = async (name) => {
+const insertProducts = async (body) => {
   const [productInser] = await connection.execute(
-    'INSERT INTO StoreManager.products (name) VALUES (?)', [name],
+    'INSERT INTO StoreManager.products (name) VALUES (?)', [body.name],
   );
   // console.log(productInser);
-  return { id: productInser.insertId, name };
+  return { id: productInser.insertId, name: body.name };
 };
 
 module.exports = {

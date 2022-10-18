@@ -1,0 +1,13 @@
+JOI:
+
+https://github.com/hapijs/joi/blob/master/lib/types/string.js#L688
+
+https://stackoverflow.com/questions/48720942/node-js-joi-how-to-display-a-custom-error-messages
+
+MSC:
+
+https://medium.com/@phtoselli/entendendo-a-arquitetura-de-software-msc-ed1f79a9755b
+
+
+ModelSales: Linha com mais de 100 colunas;
+Req. 6 não passa nos testes;

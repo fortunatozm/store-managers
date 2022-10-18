@@ -17,17 +17,16 @@ const controlById = async (req, res) => {
 };
 
 const controlInsert = async (req, res) => {
-  const { name } = req.body;
-  console.log(name);
-  if (name) {
-    if (name.length < 5) {
-      return res.status(422)
-        .json({ message: '"name" length must be at least 5 characters long' });
-    }
-    const cProd = await sInsertProduct(name);
+  // const { name } = req.body;
+  try {
+    const cProd = await sInsertProduct(req.body);
     return res.status(201).json(cProd);
+  } catch (error) {
+    if (error.message === '"name" is required') {
+      return res.status(400).json({ message: error.message });
+    }
+    return res.status(422).json({ message: error.message });
   }
-  return res.status(400).json({ message: '"name" is required' });
 };
 
 module.exports = {
