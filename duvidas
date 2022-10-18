@@ -9,5 +9,5 @@ MSC:
 https://medium.com/@phtoselli/entendendo-a-arquitetura-de-software-msc-ed1f79a9755b
 
 
-ModelSales: Linha com mais de 100 colunas;
+ModelSales: Linha com mais de 100 colunas no banco. Como refatorar;
 Req. 6 não passa nos testes;
