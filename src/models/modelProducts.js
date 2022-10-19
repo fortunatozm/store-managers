@@ -9,7 +9,6 @@ const insertProducts = async (body) => {
   const [productInser] = await connection.execute(
     'INSERT INTO StoreManager.products (name) VALUES (?)', [body.name],
   );
-  // console.log(productInser);
   return { id: productInser.insertId, name: body.name };
 };
 

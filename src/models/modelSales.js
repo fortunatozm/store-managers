@@ -8,18 +8,12 @@ const sales = async () => {
 };
 
 const insertSales = async (id, data) => {
-  try {   
-    // console.log('id:', id, ' ', 'dados:', data);
     await connection.execute(
       `INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity)
       VALUES (?, ?, ?)`,
       [id, data.productId, data.quantity],
     );
-    console.log(id);
     return id;
-  } catch (error) {
-    console.log(error);
-  }
 };
 
 const getAllSales = async () => {

@@ -12,8 +12,12 @@ const ctrlAlltSales = async (_req, res) => {
 };
 
 const ctrlIdSales = async (req, res) => {
-  const idsale = await serIdSale(req.params.id);
-  return res.status(200).json(idsale);
+  const { id } = req.params;
+  const idsale = await serIdSale(Number(id));
+  // if (id) {    
+    return res.status(200).json(idsale);
+  // }
+  // return res.status(404).json({ message: 'Sale not found' });
 };
 
 module.exports = {

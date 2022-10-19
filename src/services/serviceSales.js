@@ -15,8 +15,10 @@ const serAllSales = async () => {
 
 const serIdSale = async (id) => {
   const salesArr = await getAllSales();
-  salesArr.filter((idSale) => idSale.saleId === Number(id));
-  return salesArr;
+  const idFiltered = salesArr.filter((idSale) => idSale.saleId === Number(id));
+  const filMap = idFiltered.map((fil) => (
+    { date: fil.date, productId: fil.productId, quantity: fil.quantity }));
+  return filMap;
 };
 
 module.exports = {

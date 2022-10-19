@@ -22,7 +22,7 @@ const schema = Joi.object({
 });
 
 const sInsertProduct = async (body) => {
-  console.log(schema.validate(body));
+  // console.log(schema.validate(body));
   const { error } = schema.validate(body);
   if (error) {
     throw new Error(error.message);
