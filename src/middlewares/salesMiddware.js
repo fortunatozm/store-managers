@@ -10,7 +10,6 @@ const quantity = (req, res) => {
     } else {
       return res.status(400).json({ message: '"quantity" is required' });
     }
-    return true;
   });
 };
 
@@ -34,9 +33,9 @@ const salesIdValid = async (req, res, next) => {
   const salesArr = await getAllSales();
   const id = Number(req.params.id);
   const idValids = salesArr.map((idValid) => idValid.saleId);
-  console.log(idValids);
+  // console.log(idValids);
   const saleIdBool = idValids.includes(id);
-  console.log(saleIdBool);
+  // console.log(saleIdBool);
   if (saleIdBool === false) {
     return res.status(404).json({ message: 'Sale not found' }); 
   }

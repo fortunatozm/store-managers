@@ -3,6 +3,7 @@ const { insertSales, sales, getAllSales } = require('../models/modelSales');
 
 const ssInsert = async (data) => {
   const id = await sales();
+  console.log('Id:', id);
   await Promise.all(data.map((dat) => insertSales(id, dat)));
   // Promise.all(promises);
   return { id, itemsSold: data };
