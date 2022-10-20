@@ -3,7 +3,9 @@ const Joi = require('joi');
 const {
   getAllProducts,
   insertProducts,
-  updateProducts } = require('../models/modelProducts');
+  updateProducts,
+  deleteProd,
+} = require('../models/modelProducts');
 
 const serviceAllProducts = async () => {
   const prod = await getAllProducts();
@@ -40,9 +42,14 @@ const serUpProd = async (id, name) => {
   return spUpdate;
 };
 
+const serDeletePro = async (id) => {
+  await deleteProd(id);
+};
+
 module.exports = {
   serviceAllProducts,
   serviceById,
   sInsertProduct,
   serUpProd,
+  serDeletePro,
 };

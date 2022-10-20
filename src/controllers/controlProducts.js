@@ -2,6 +2,7 @@ const { serviceAllProducts,
   serviceById,
   sInsertProduct,
   serUpProd,
+  serDeletePro,
 } = require('../services/serivceProducts');
 
 const controlAllProducts = async (_req, res) => {
@@ -37,9 +38,16 @@ const controlUpdatePr = async (req, res) => {
   return res.status(200).json({ id, name });
 };
 
+const controlDeletePr = async (req, res) => {
+  const { id } = req.params;
+  await serDeletePro(id);
+  return res.status(204).json({ id }); 
+};
+
 module.exports = {
   controlAllProducts,
   controlById,
   controlInsert,
   controlUpdatePr,
+  controlDeletePr,
 };

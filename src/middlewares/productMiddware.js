@@ -17,12 +17,8 @@ const idUpProduct = async (req, res, next) => {
 
 const nemeProduct = async (req, res, next) => {
   const { name } = req.body;
-  const id = Number(req.params.id);
-  // console.log('tamanho', name.length);
   if (name) {
-    if (name.length >= 5) {
-      res.status(200).json({ id, name });
-    } else {
+    if (name.length < 5) {
       return res.status(422).json({ message: '"name" length must be at least 5 characters long' });
     }
   } else {
