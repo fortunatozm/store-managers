@@ -31,6 +31,10 @@ const sInsertProduct = async (body) => {
   return prodName;
 };
 
+const serUpProd = async (id) => {
+
+};
+
 module.exports = {
   serviceAllProducts,
   serviceById,

@@ -13,6 +13,19 @@ const quantity = (req, res) => {
   });
 };
 
+// const quantity = (req, res) => {
+//   for (let index = 0; index < req.body.length; index += 1) {
+//     const data = req.body[index];
+//     if (data.quantity || data.quantity === 0) {
+//       if (data.quantity <= 0) {
+//         return res.status(422).json({ message: '"quantity" must be greater than or equal to 1' });
+//       }
+//     } else {
+//       return res.status(400).json({ message: '"quantity" is required' });
+//     }
+//   }
+// };
+
 const productId = async (req, res) => {
   const allProduct = await getAllProducts();
 

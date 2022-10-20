@@ -29,8 +29,14 @@ const controlInsert = async (req, res) => {
   }
 };
 
+const controlUpdatePr = async (req, res) => {
+  const { id } = req.params;
+  return res.status(201).json(id);
+};
+
 module.exports = {
   controlAllProducts,
   controlById,
   controlInsert,
+  controlUpdatePr,
 };
