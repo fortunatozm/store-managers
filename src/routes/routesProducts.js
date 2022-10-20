@@ -4,7 +4,7 @@ const { controlAllProducts,
   controlInsert,
   controlUpdatePr,
 } = require('../controllers/controlProducts');
-const { idUpProduct } = require('../middlewares/productMiddware');
+const { idUpProduct, nemeProduct } = require('../middlewares/productMiddware');
 const {
   // ctrlInsertSales,
   ctrlAlltSales,
@@ -16,7 +16,7 @@ const productRouters = Router();
 productRouters.get('/products', controlAllProducts);
 productRouters.get('/products/:id', controlById);
 productRouters.post('/products', controlInsert);
-productRouters.put('/products/:id', idUpProduct, controlUpdatePr);
+productRouters.put('/products/:id', idUpProduct, nemeProduct, controlUpdatePr);
 // productRouters.post('/sales', validSales, ctrlInsertSales);
 productRouters.get('/sales', ctrlAlltSales);
 productRouters.get('/sales/:id', salesIdValid, ctrlIdSales);

@@ -1,6 +1,7 @@
 const { serviceAllProducts,
   serviceById,
   sInsertProduct,
+  serUpProd,
 } = require('../services/serivceProducts');
 
 const controlAllProducts = async (_req, res) => {
@@ -30,8 +31,10 @@ const controlInsert = async (req, res) => {
 };
 
 const controlUpdatePr = async (req, res) => {
+  const { name } = req.body;
   const { id } = req.params;
-  return res.status(201).json(id);
+  await serUpProd(id, name);
+  return res.status(200).json({ id, name });
 };
 
 module.exports = {
