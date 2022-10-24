@@ -41,12 +41,12 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-10-14T22:31:30.230Z",
-    "modified": "2022-10-20T14:35:00.263Z",
+    "modified": "2022-10-24T14:08:16.872Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Martelo do Batman\"\n}",
+      "raw": "[{\"productId\":1,\"quantity\": 0}]",
       "form": []
     },
     "tests": []

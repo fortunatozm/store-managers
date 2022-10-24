@@ -1,7 +1,7 @@
 const { getAllProducts } = require('../models/modelProducts');
 const { getAllSales } = require('../models/modelSales');
 
-const quantity = (req, res) => {
+const quantity = (req, res, next) => {
   req.body.forEach((data) => {
     if (data.quantity || data.quantity === 0) {
       if (data.quantity <= 0) {
@@ -11,6 +11,7 @@ const quantity = (req, res) => {
       return res.status(400).json({ message: '"quantity" is required' });
     }
   });
+  next();
 };
 
 // const quantity = (req, res) => {
@@ -26,7 +27,7 @@ const quantity = (req, res) => {
 //   }
 // };
 
-const productId = async (req, res) => {
+const productId = async (req, res, next) => {
   const allProduct = await getAllProducts();
 
   const idProdcut = allProduct.map((prod) => prod.id);
@@ -40,6 +41,7 @@ const productId = async (req, res) => {
       return res.status(400).json({ message: '"productId" is required' });
     }
   });
+  next();
 };
 
 const salesIdValid = async (req, res, next) => {
@@ -55,13 +57,14 @@ const salesIdValid = async (req, res, next) => {
   next();
 };
 
-const validSales = (req, res, next) => {
-  productId(req, res);
-  quantity(req, res);
-  next();
-};
+// const validSales = (req, res, next) => {
+//   productId(req, res);
+//   quantity(req, res);
+//   next();
+// };
 
   module.exports = {
-    validSales,
+    quantity,
+    productId,
     salesIdValid,
   };

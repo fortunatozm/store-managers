@@ -19,7 +19,7 @@ productRouters.get('/products/:id', controlById);
 productRouters.post('/products', controlInsert);
 productRouters.put('/products/:id', idUpProduct, nemeProduct, controlUpdatePr);
 productRouters.delete('/products/:id', idUpProduct, controlDeletePr);
-// productRouters.post('/sales', validSales, ctrlInsertSales);
+// productRouters.post('/sales', productId, quantity, ctrlInsertSales);
 productRouters.get('/sales', ctrlAlltSales);
 productRouters.get('/sales/:id', salesIdValid, ctrlIdSales);
 

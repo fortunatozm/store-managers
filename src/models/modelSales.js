@@ -14,7 +14,7 @@ const insertSales = async (id, data) => {
       VALUES (?, ?, ?)`,
       [id, data.productId, data.quantity],
     );
-    return id;
+  return { id, itemsSold: data };
 };
 
 const getAllSales = async () => {

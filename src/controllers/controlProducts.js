@@ -1,12 +1,13 @@
-const { serviceAllProducts,
-  serviceById,
+const { serviceById,
   sInsertProduct,
   serUpProd,
   serDeletePro,
 } = require('../services/serivceProducts');
+const serivceProducts = require('../services/serivceProducts');
 
 const controlAllProducts = async (_req, res) => {
-  const prods = await serviceAllProducts();
+  const prods = await serivceProducts.serviceAllProducts();
+  console.log(prods);
   return res.status(200).json(prods);
 };
 
