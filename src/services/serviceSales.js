@@ -1,6 +1,7 @@
 const { insertSales, sales, getAllSales } = require('../models/modelSales');
 // const { getAllProducts } = require('../models/modelProducts');
 // testar
+// testar2
 
 const ssInsert = async (data) => {
   const id = await sales();
