@@ -13,6 +13,12 @@ const allProducts = [
   }
 ];
 
+const inserted = {
+  id: 4,
+  name: 'ProdutoX'
+};
+
 module.exports = {
   allProducts,
+  inserted,
 }

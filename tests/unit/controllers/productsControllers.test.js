@@ -1,6 +1,5 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-// const { array } = require('joi');
 const sinon = require('sinon');
 const allProducts = require('../models/productsModels.mock').allProducts;
 const controlAllProducts = require('../../../src/controllers/controlProducts').controlAllProducts;
@@ -35,7 +34,6 @@ describe('Desenvolva testes que cubram no mínimo 5% das camadas da sua aplicaç
 
     it('testing status', function () {      
       controlAllProducts(req, res).then(() => {
-        // expect(results).to.be.equal(allProducts);
         // expect(results).to.have.been.calledWith(200);
         expect(res.status.calledWith(200)).to.be.true;
       });
@@ -43,9 +41,6 @@ describe('Desenvolva testes que cubram no mínimo 5% das camadas da sua aplicaç
     
     it('testing status', async function () {      
       await controlAllProducts(req, res);
-      console.log(res.json);
-      // expect(results).to.be.equal(allProducts);
-      // expect(results).to.have.been.calledWith(200);
       expect(res.json.calledWith(allProducts)).to.be.true;
     });
 
